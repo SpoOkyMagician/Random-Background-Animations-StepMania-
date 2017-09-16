@@ -1,0 +1,43 @@
+local t = Def.ActorFrame{
+	LoadActor("dawn_dusk")..{
+		InitCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y);
+		OnCommand=function(self)
+			self:x(SCREEN_CENTER_X);
+			self:y(SCREEN_CENTER_Y);
+		end;
+	},
+	LoadActor("day")..{
+		InitCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y);
+		OnCommand=function(self)
+			self:x(SCREEN_CENTER_X);
+			self:y(SCREEN_CENTER_Y);
+			self:diffusealpha(0);
+			self:linear(4);
+			self:diffusealpha(1);
+		end;
+	},
+	LoadActor("dawn_dusk")..{
+		InitCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y);
+		OnCommand=function(self)
+			self:x(SCREEN_CENTER_X);
+			self:y(SCREEN_CENTER_Y);
+			self:diffusealpha(0);
+			self:sleep(4);
+			self:linear(4);
+			self:diffusealpha(1);
+		end;
+	},
+	LoadActor("night")..{
+		InitCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y);
+		OnCommand=function(self)
+			self:x(SCREEN_CENTER_X);
+			self:y(SCREEN_CENTER_Y);
+			self:diffusealpha(0);
+			self:sleep(8);
+			self:linear(4);
+			self:diffusealpha(1);
+		end;
+	}
+};
+
+return t;
